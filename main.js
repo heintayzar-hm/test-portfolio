@@ -192,9 +192,8 @@ btnProjects.forEach(
 
 const form = document.querySelector('#form');
 const emailMessage = document.querySelector('#email-message');
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  if (form.elements.email.value === form.elements.email.value.toLowerCase()) {
+form.addEventListener('submit', () => {
+  if (form.elements.email.value !== form.elements.email.value.toLowerCase()) {
     form.submit();
   } else {
     emailMessage.innerHTML += 'Email should be in lowercase.';
